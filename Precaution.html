@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style>
+		h2 {color: aqua}
+	#form{
+	            border: 1px solid #ededed;
+	            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+	            background-color: #f2f3f5;
+	            padding: 40px 40px;
+	            border-radius: 2px;
+	            width: 70%;
+	            height:100%; 
+	            position: relative;
+	            top: 380px;
+	            left: 50%;
+	  /* bring your own prefixes */
+	            transform: translate(-50%, -50%);
+	        }
+	
+	        
+	#Result{
+	            z-index: 1;
+	            padding-top: 20px;
+	            border: 1px solid #ededed;
+	            width: 60%;
+	            padding: 40px 40px;
+	            display:none;
+	            box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+	            position: fixed;
+	            top: 10%;
+	            left: 20%;
+	            height: 85%; /* Full height */
+	            overflow: auto; /
+	            /* bring your own prefixes */
+	            transform: translate(-50%, -50%);
+	            background-color: #FFFFFF; 
+	            
+	        }
+	.close {
+	  color: #aaaaaa;
+	  float: right;
+	  font-size: 30px;
+	  font-weight: bold;
+	}
+	
+	.close:hover,
+	.close:focus {
+	  color: #000;
+	  text-decoration: none;
+	  cursor: pointer;
+	}
+	
+	#Submit{
+	            width: 150px;
+	            height: 60px;
+	            text-align: center;
+	            font-size: 20px;
+	            background: #a8cf45;
+	            color: #ffffff;
+	            font-weight: bold;
+	        }
+	
+	
+	#Submit:hover{
+	            background-color: #55a8d9; /* Green */
+	            color: white;
+	        }
+	
+	
+	</style>
+	<script>
+	       function show(){
+	           document.getElementById("Result").style.display="block";
+	           var span = document.getElementsByClassName("close")[0];
+	           span.onclick = function() {
+	               document.getElementById("Result").style.display = "none";
+	           }
+				
+	           window.onclick = function(event) {
+	               if (event.target == modal) {
+	                   modal.style.display = "none";
+	               }
+	           }
+				
+	        if(document.getElementById("1").checked){
+	            if(document.getElementById("3").checked){
+	                if(document.getElementById("5").checked) {
+	                   document.getElementById("div1").style.display="";
+	                   document.getElementById("div2").style.display="";
+	                   document.getElementById("div3").style.display="";
+	                   document.getElementById("div4").style.display="";
+	                  }
+	                else {
+	                  document.getElementById("div1").style.display="";
+	                  document.getElementById("div2").style.display="";
+	                  document.getElementById("div3").style.display="none";
+	                  document.getElementById("div4").style.display="";
+	                 }
+	        					 }
+	        					else {
+	        					    if(document.getElementById("5").checked) {
+	                  document.getElementById("div1").style.display="";
+	                  document.getElementById("div2").style.display="none";
+	                  document.getElementById("div3").style.display="";
+	                  document.getElementById("div4").style.display="";
+	                  }
+	                else {
+	                   document.getElementById("div1").style.display="";
+	                   document.getElementById("div2").style.display="none";
+	                   document.getElementById("div3").style.display="none";
+	                   document.getElementById("div4").style.display="";
+	                }
+	        					}
+	        								}
+	        else{
+	        				    if(document.getElementById("3").checked){
+	                if(document.getElementById("5").checked) {
+	                   document.getElementById("div1").style.display="none";
+	                   document.getElementById("div2").style.display="block";
+	                   document.getElementById("div3").style.display="block";
+	                   document.getElementById("div4").style.display="block";
+	                  }
+	                else {
+	                  document.getElementById("div1").style.display="none";
+	                  document.getElementById("div2").style.display="block";
+	                  document.getElementById("div3").style.display="none";
+	                  document.getElementById("div4").style.display="block";
+	                }
+	        					 }
+	        			
+	             else {
+	        					    if(document.getElementById("5").checked) {
+	                   document.getElementById("div1").style.display="none";
+	                   document.getElementById("div2").style.display="none";
+	                   document.getElementById("div3").style.display="block";
+	                   document.getElementById("div4").style.display="block";
+	                  }
+	                else {
+	                  document.getElementById("div1").style.display="none";
+	                  document.getElementById("div2").style.display="none";
+	                  document.getElementById("div3").style.display="none";
+	                  document.getElementById("div4").style.display="block";
+	                }
+	        					}
+	        }				
+	       }
+	    
+	   </script>
+	<body>
+		<div id="form" class="col-md-6 wow slideInLeft hidden-xs hidden-sm" style="visibility: visible; animation-name: slideInLeft;">
+		        <p style="font-size: 18px;font-weight: 600">Is it rainy or snowy today?</p>
+		        <input type="radio" id="1" name="budget" value="high" checked>Yes<br>
+		        <input type="radio" id="2" name="budget" value="medium">No<br>
+		        
+		        <p style="font-size: 18px;font-weight: 600">Is there any road corssing between school and home?</p>
+		        <input type="radio" id="3" name="concerns" value="heart disease" checked>Yes<br>
+		        <input type="radio" id="4" name="concerns" value="DIABETES">No<br>
+		        
+		        
+		        <p style="font-size: 18px;font-weight: 600">Is there any train crossing between school and home?</p>
+		        <input type="radio" id="5" name="help" value="yes" checked> Yes<br>
+		        <input type="radio" id="6" name="help" value="no"> No<br><br>
+		        <br><br>
+		        <button id='Submit' onclick="show()">Submit</button><br><br><br>
+		        </div>
+		
+		        <br><br>
+		        
+		    <div id="Result" class="modal">
+				<span class="close">&times;</span>
+				<p style="font-size:40px; color: rgba(244,93,161,0.89);font-weight: 600;">Precautions:</p>
+				
+				<div id="div1"><!--weather not good-->
+					<h2>Bad weather precautions</h2>
+					<h4>Dont run!</h4>
+					<p style="font-weight:200;">We know this seems like common sense, but when standing in a downpour, most of us have the understandable urge to dash across the road to safety. You must resist this urge. Visibility during the rains drops dramatically and an oncoming car may not see you in time.</p>
+					<h4>Wear bright clothing</h4>
+					<p style="font-weight:200;">When it is dark, wear light-colored clothes and reflective stripes.</p>
+				</div>
+				<div id="div2"><!--need cross road-->
+				     <h2>Road crossing precautions</h2>
+					 <h4>Stop before crossing the street</h4>
+					 <p style="font-weight:200;">Never dart or dash out into the street.</p>
+					 <h4>Obey all traffic signals.</h4>
+					 <p style="font-weight:200;">Before stepping out into the street, be sure to look at all traffic signals.</p>
+					 <h4>Cross at the corss walk</h4>
+					 <p style="font-weight:200;">Cross only at intersections or street corners. When available, cross between the white painted crosswalk lines</p>
+				</div>
+				<div id="div3"><!--have train crossing-->
+				    <h2>Train crossing precautions</h2>
+					<h4>Rules for pedestrians</h4>
+					<p style="font-weight:200;">As a pedestrian you must not cross the train tracks at a level crossing unless you use an area made for pedestrians.</p>
+					<p style="font-weight:200;">If ther is no area for pedestrians, you must cross the track within 20 metres of the level crossing.
+				</div>
+				<div id="div4"><!--general-->
+				    <h2>General precations</h2>
+					<h4>Walk on the sidewalk</h4>
+					<p style="font-weight:200;">If there are no side walks, walk as close to the left side of the street as possible, facing traffic.</p>
+					<h4>Dont play in the street</h4>
+					<p style="font-weight:200;">Don't push, shove, or chase each other when near the street.</p>
+					
+				</div>
+
+				
+
+		    </div>
+	</body>
+</html>
