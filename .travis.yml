@@ -1,0 +1,9 @@
+language: python
+install:
+- pip install awscli
+script:
+- echo hello world
+deploy:
+  provider: s3
+  acl: public_read
+  skip_cleanup: 'true'
