@@ -5,7 +5,7 @@ script:
 - echo hello world
 deploy:
   provider: s3
-  access_key_id: "$AWS_accessKey"
+  access_key_id: "$AWS_AccessKey"
   secret_access_key: "$AWS_SecretKey"
  bucket: "divingbirdbucket"
   acl: public_read
