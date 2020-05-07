@@ -5,5 +5,7 @@ script:
 - echo hello world
 deploy:
   provider: s3
+  access_key_id: "$AWS_accessKey"
+  secret_access_key: "$AWS_SecretKey"
   acl: public_read
   skip_cleanup: 'true'
