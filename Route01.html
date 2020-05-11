@@ -152,7 +152,13 @@
 
 
     <script>
-
+       function go(){
+			 window.location.href="mapv1.html";
+			 var strStart= document.getElementById("start").value;  
+			 localStorage.setItem('start',strStart);
+			 var strEnd=document.getElementById("end").value;  
+			 localStorage.setItem('end',strEnd);
+		}
 
     </script>
 
