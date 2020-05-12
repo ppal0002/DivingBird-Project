@@ -18,5 +18,6 @@ provider: codedeploy
     key: latest/MyApp.zip
     application: MyApp
     deployment_group: MyDeploymentGroup
+    region: us-east-1d
     
     
