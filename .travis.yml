@@ -3,11 +3,6 @@ install:
 - pip install awscli
 script:
 - echo hello world
-
-before_deploy:
-  - zip -r latest *
-  - mkdir -p dpl_cd_upload
-  - mv latest.zip dpl_cd_upload/latest.zip
   
 deploy:
   provider: s3
@@ -16,12 +11,5 @@ deploy:
   bucket: "divingbird-web-user"
   acl: public_read
   skip_cleanup: 'true'
-
-provider: codedeploy
-    access_key_id: "$AWS_AccessKey"
-    secret_access_key: "$AWS_SecretKey"
-    bucket: "divingbird-web-user"
-    application: divingbirdApplication
-    deployment_group: divingbirdDeployment
 
     
