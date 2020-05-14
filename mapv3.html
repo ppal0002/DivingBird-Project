@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Actor">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans">
+		<link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+		<style>
+		  /* Always set the map height explicitly to define the size of the div
+		   * element that contains the map. */
+		  #map {
+		    height: 100%;
+			width: 80%;
+			margin-left: 10%;
+			margin-top: -7px;
+		  }
+		  
+		  #first{
+			margin-top: 10%;
+			margin-left: 3%;
+		  }
+		  #second{
+		  		margin-top: 10%;
+		  		margin-left: 3%;
+		  }
+		  
+		  #showright {
+			   margin-top: 33px;
+		    height: 100%;
+			float: right;
+			width: 20%;
+			background-color: #A5D5E3;
+		  }
+		  /* Optional: Makes the sample page fill the window. */
+		  html, body {
+		    height: 100%;
+		    margin: 0;
+		    padding: 0;
+		  }
+		  #floating-panel {
+		    position: absolute;
+		    top: 10px;
+		    left: 25%;
+		    z-index: 5;
+		    background-color: #fff;
+		    padding: 5px;
+		    border: 1px solid #999;
+		    text-align: center;
+		    font-family: 'Roboto','sans-serif';
+		    line-height: 30px;
+		    padding-left: 10px;
+		  }
+		  #warnings-panel {
+		    width: 100%;
+		    height:10%;
+		    text-align: center;
+		  }
+		  
+		  .titleclass{
+			 background-color: #0052cc; 
+		  }
+		  
+		  h1 {
+		      color: #f2f2f2;
+		      font-family: 'Lato', sans-serif;
+		      font-size: 35px;
+		  
+		      
+		  }
+		  
+		  
+		  .inputAddress {
+		      color: #26408B;
+		      font-family: 'Lato', sans-serif;
+		      font-size: 28px;
+		  
+		      position: absolute;
+		      top: 30%;
+		      left: 20%;
+		  }
+		  
+		  .inputMap {
+		      color: #26408B;
+		      font-family: 'Lato', sans-serif;
+		      font-size: 18px;
+		  
+		  
+		  }
+		  
+		  input[type=text] {
+		      border: 4px solid #A5D5E3;
+		      border-radius: 4px;
+		      font-size: 17px;
+		  }
+		  
+		  h2 {
+		      color: #26408B;
+		      font-family: 'Lato', sans-serif;
+		      font-size: 28px;
+		  
+		      position: absolute;
+		      top: 60%;
+		      left: 20%;
+		  }
+		  
+		  
+		  .concernButton {
+		  
+		      border: chocolate;
+		      color: #AA7D3D;
+		      background-color: #A5D5E3;
+		      margin: 15px;
+		      height: 40px;
+		      width: 300px;
+		      border-radius: 8px;
+		      font-family: 'Lato', sans-serif;
+		      font-size: 26px;
+		      text-align: center;
+		      position: relative;
+		      top: 65%;
+		  }
+		  
+		  
+		  .goButton {
+		      width: 85px;
+		      height: 35px;
+		      text-align: center;
+		      font-size: 18px;
+		      background: #26408B;
+		      color: #D7F9FF;
+		      font-weight: bold;
+		  }
+		  
+		  #goButtonDiv {
+		      padding-top: 5%;
+		      padding-left: 65%;
+		  }
+		  
+		  .goButton:hover{
+		              background-color: #55a8d9; /* Green */
+		              color: white;
+		          }
+		  
+		  .brand-box {
+		      position: absolute;
+		      top: 40px;
+		      left: 40px;
+		  }
+		  
+		  .brand {
+		      font-size: 20px;
+		      font-family: 'Lato', sans-serif;
+		  }
+		  .headLable {
+		      background-color: lightblue;
+		      height: 20vh;
+		  }
+		  
+		  
+		  /* Add a black background color to the top navigation */
+		  .topnav {
+		      background-color: #26408B;
+		      overflow: hidden;
+		      position: relative;
+		      top: 90%;
+		  }
+		  
+		  /* Style the links inside the navigation bar */
+		  .topnav a {
+		      float: right;
+		      color: #f2f2f2;
+		      text-align: center;
+		      padding: 14px 16px;
+		      text-decoration: none;
+		      font-size: 17px;
+		  }
+		  
+		  /* Change the color of links on hover */
+		  .topnav a:hover {
+		      background-color: #ddd;
+		      color: #4CAF50;
+		  }
+		  
+		  /* Add a color to the active/current link */
+		  .topnav a.active {
+		      background-color: #4CAF50;
+		      color: white;
+		  }
+		  .footer {
+		              background: #152f4f;
+		              color: white;
+		              height: 100px;
+		  
+		          }
+		  
+		          .left {
+		              text-align: left;
+		              float: left;
+		              width: 70%;
+		              position: absolute;
+		              left: 2%
+		          }
+		  
+		          .right {
+		              float: right;
+		              text-align: right;
+		              width: 30%;
+		              position: absolute;
+		              right: 3%;
+		          }
+		.inset {
+					  width: 100%;
+					  display: inline-table;
+					  margin-top: 30%;
+					  border-style:inset;
+		        height:auto;
+						  background-color: #e6ac00;
+		       
+		}
+		
+		.pac-card {
+		        margin: 10px 10px 0 0;
+		        border-radius: 2px 0 0 2px;
+		        box-sizing: border-box;
+		        -moz-box-sizing: border-box;
+		        outline: none;
+		        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+		        background-color: #fff;
+		        font-family: Roboto;
+		      }
+		#title {
+		        color: #fff;
+		        background-color: #4d90fe;
+		        font-size: 25px;
+		        font-weight: 500;
+		        padding: 6px 12px;
+		      }
+		 .pac-controls {
+		         display: inline-block;
+		         padding: 5px 11px;
+				 
+		       }
+		 
+		       .pac-controls label {
+		         font-family: 'Lato', sans-serif;
+				 color: #26408B;
+		         font-size: 18px;
+		         font-weight: 300;
+				 
+		       }
+		.preparationvideo{
+			background: url(preparation.jpg);
+			height: auto;
+		}
+		.precautionvideo{
+			background: url(precaution.jpg);
+			height: auto;
+		}
+
+		
+		</style>
+	</head>
+	<body style="background-color: #ffff80;">
+		<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav" style="height: 100;">
+		    <div class="container"><img style="background-image: url(&quot;assets/img/Logo_02.png&quot;);width: 40px;height: 70px;max-height: auto;" src="assets/img/Logo_02.png"><a class="navbar-brand" href="#page-top">Diving Bird</a><button data-toggle="collapse" data-target="#navbarResponsive"
+		            class="navbar-toggler navbar-toggler-right" type="button" data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+		        <div class="collapse navbar-collapse"
+		            id="navbarResponsive">
+		            <ul class="nav navbar-nav ml-auto text-uppercase">
+		                <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="index.html">Home</a></li>
+		                <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#portfolio">benefits</a></li>
+		                <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#about">today's update</a></li>
+		                <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#team">about</a></li>
+		                <li class="nav-item" role="presentation"></li>
+		            </ul>
+		        </div>
+		    </div>
+		</nav>
+		<div id="header" class="titleclass" style="padding-top:140px">
+			<h1> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Route Suggester <br> &nbsp </h1>
+		</div>
+		<div class="pac-card" id="pac-card">
+		        <div id="title">
+		          Search your route here!
+				 </div> 	
+			<div>
+                <form class="inputMap">
+                   <label for="schoolAddress"> <img src="home.png" width="30" height="30">My Home :&nbsp</label>
+                   <input type="text" id="start" name="hAddress" > &nbsp &nbsp &nbsp
+                   <label for="homeAddress"> <img src="school.png" width="30" height="30">My School :</label>
+                   <input type="text" id="end" name="sAddress"> &nbsp &nbsp &nbsp
+                </form> 
+			    <div id="type-selector" class="pac-controls">
+			       <input type="radio" id="Choice1"
+			            name="contact" value="WALKING">
+			       <label for="Choice1">Walking</label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+			       <input type="radio" id="Choice2"
+			            name="contact" value="DRIVING">
+			       <label for="Choice2">Car</label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+			       <input type="radio" id="Choice3"
+			            name="contact" value="BICYCLING">
+			       <label for="Choice3">Cycling</label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+			       <input type="radio" id="Choice4"
+			            name="contact" value="TRANSIT">
+			       <label for="Choice4">Public Transit</label>
+			    </div><br>
+                <button class="goButton" id="goBtn"> Search! </button>
+		    </div>	
+	    </div>
+	    <div id="map"></div>
+		
+        <div id="preparation" style="display: none;">
+			<div id="preparationtile" class="titleclass">
+				<h1 id="preparationname"> <br> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Preparation for <br> &nbsp </h1>
+			</div>
+ 
+            <div id="preparationvideo" >
+				<p>&nbsp</p>
+				<br>
+            	<div name="video" id="walk" style="display: none;  margin-left: 25%;">
+            		<iframe width="60%" height="400" src="https://www.youtube.com/embed/Eg7oWPscoQM"
+            		  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            	</div>
+            	<div name="video" id="drive" style="display: none; margin-left: 25%;">
+            		<iframe width="60%" height="400" src="https://www.youtube.com/embed/bUwPNVEBZxA" 
+            		  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            	</div>
+            	<div name="video" id="cycle" style="display: none;  margin-left: 25%;">
+            		<iframe width="60%" height="400" src="https://www.youtube.com/embed/dkoVxBnnGko" 
+            		 frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            	</div>
+            	<div id="bus" style="display: none;  margin-left: 25%;">
+            		<iframe width="60%" height="400" src="https://www.youtube.com/embed/eINQdeux2yg?start=467" 
+            		  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            	</div>
+				<br>
+				<p>&nbsp</p>
+             </div>	
+        </div>
+        <div id="precaution" style="display: none;">
+        	<div id="preparationtile" class="titleclass">
+        		<h1 id="precautionname"><br>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Precaution for <br> &nbsp </h1>
+        	</div>
+
+            <div id="precautionvideo" >
+            <p>&nbsp</p>
+            <br>
+			<div id="walk2" style="display: none;  margin-left: 25%;">
+				<iframe width="60%" height="400" src="https://www.youtube.com/embed/67ZkzNRnxfo" 
+				frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div id="drive2" style="display: none;  margin-left: 25%;">
+				<iframe width="60%" height="400" src="https://www.youtube.com/embed/g3u7MsBK_lE" 
+				frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div id="cycle2" style="display: none;  margin-left: 25%;">
+				<iframe width="60%" height="400" src="https://www.youtube.com/embed/0HTi8ZI6l04" 
+				frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div id="bus2" style="display: none;  margin-left: 25%;">
+				<iframe width="60%" height="400" src="https://www.youtube.com/embed/8Kh42fysps0?start=180"
+				frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<br>
+			<p>&nbsp</p>
+            </div> 	
+        </div>
+		<footer style="background-color: #0052cc;">
+		    <div class="container" >
+		        <div class="row">
+		            <div class="col-md-4"><span class="copyright">Copyright&nbsp;© Diving Bird 2020</span></div>
+		            <div class="col-md-4">
+		                <ul class="list-inline social-buttons">
+		                    <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+		                    <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+		                    <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+		                </ul>
+		            </div>
+		            <div class="col-md-4">
+		                <ul class="list-inline quicklinks">
+		                    <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+		                    <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+		                </ul>
+		            </div>
+		        </div>
+		    </div>
+		</footer>
+	  <script>
+	
+		
+		function initMap() {	
+			
+			
+		    // Instantiate a directions service.
+		    var directionsService = new google.maps.DirectionsService;	
+		    // Create a map and center it on Melbourne
+		    var map = new google.maps.Map(document.getElementById('map'), {
+		      zoom: 13,
+		      center: {lat: -37.8158784, lng: 144.9641766}
+		    });
+			
+			var input = document.getElementById('start');
+			var input2 = document.getElementById('end');
+			var card = document.getElementById('pac-card');
+			map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
+			var autocomplete = new google.maps.places.Autocomplete(input);
+			var autocomplete2 = new google.maps.places.Autocomplete(input2);
+			autocomplete.bindTo('bounds', map);
+			autocomplete2.bindTo('bounds', map);
+			
+		
+		    // Create a renderer for directions and bind it to the map.
+		    var directionsRenderer = new google.maps.DirectionsRenderer({map: map});
+		
+		    // Instantiate an info window to hold step text.
+		    var stepDisplay = new google.maps.InfoWindow;
+		   // calculateAndDisplayRoute(directionsRenderer, directionsService, travelmode, map);
+		    // Listen to change events
+			document.getElementById("goBtn").addEventListener("click", function(){
+				//alert("hello");
+				document.getElementById("walk").style.display = "none";
+				document.getElementById("walk2").style.display = "none";
+				document.getElementById("drive").style.display = "none";
+				document.getElementById("drive2").style.display = "none";
+				document.getElementById("cycle").style.display = "none";
+				document.getElementById("cycle2").style.display = "none";
+				document.getElementById("bus").style.display = "none";
+				document.getElementById("bus2").style.display = "none";
+				
+			    if(document.getElementById("Choice1").checked){
+			    	  var travelmode = document.getElementById("Choice1").value;
+                      document.getElementById("walk").style.display = "block";
+					  document.getElementById("walk2").style.display = "block";
+					  document.getElementById("precautionname").innerHTML = "<br>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Precaution for WALKING <br> &nbsp ";
+					  document.getElementById("preparationname").innerHTML = "<br>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Preparation for WALKING <br> &nbsp ";
+			    }else if(document.getElementById("Choice2").checked){
+			    	  var travelmode = document.getElementById("Choice2").value;
+					  document.getElementById("drive").style.display = "block";
+					  document.getElementById("drive2").style.display = "block";
+					  document.getElementById("precautionname").innerHTML = "<br>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Precaution for DRIVING <br> &nbsp ";
+					  document.getElementById("preparationname").innerHTML = "<br>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Preparation for DRIVING <br> &nbsp ";
+			    }else if(document.getElementById("Choice3").checked){
+			    	  var travelmode = document.getElementById("Choice3").value;
+					  document.getElementById("cycle").style.display = "block";
+					  document.getElementById("cycle2").style.display = "block";
+					  document.getElementById("precautionname").innerHTML = "<br>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Precaution for CYCLING <br> &nbsp ";
+					  document.getElementById("preparationname").innerHTML = "<br>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Preparation for CYCLING <br> &nbsp ";
+			    }else{
+			    	  var travelmode = document.getElementById("Choice4").value;
+					  document.getElementById("bus").style.display = "block";
+					  document.getElementById("bus2").style.display = "block";
+					  document.getElementById("precautionname").innerHTML = "<br>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Precaution for PUBLIC TRANSIT <br> &nbsp ";
+					  document.getElementById("preparationname").innerHTML = "<br>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Preparation for PUBLIC TRANSIT <br> &nbsp ";
+			    }
+			    calculateAndDisplayRoute(directionsRenderer, directionsService, travelmode, map);
+			    document.getElementById("preparation").style.display = "block";
+			    document.getElementById("precaution").style.display = "block";
+			});
+		   
+		  }
+		
+		
+		function calculateAndDisplayRoute(directionsRenderer, directionsService, travelmode, map) {
+
+		    directionsService.route({
+		      origin: document.getElementById('start').value,
+		      destination: document.getElementById('end').value,
+		      travelMode: travelmode,
+		    }, function(response, status) {
+		
+		      if (status === 'OK') {
+		        directionsRenderer.setDirections(response);
+		      } else {
+		        window.alert('Please input the correct address!');
+		      }
+		    });
+		  }
+		  
+	    	
+	   
+	  </script>
+	  <script async defer
+	  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlHeVC3jEaa6sLTcfjG7VbNbZqcRTEhjs&libraries=places&callback=initMap">
+	  </script>
+	</body>
+</html>
