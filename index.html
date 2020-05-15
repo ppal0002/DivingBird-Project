@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Actor">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alegreya+Sans">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+             var apiCall = 'https://api.openweathermap.org/data/2.5/forecast?q=melbourne&appid=b5eb0cf15be970e242fbfb9641fdd98a';
+        
+            $.getJSON(apiCall,weatherCallback);
+         
+            function weatherCallback(weatherData){
+                var date0 = weatherData.list[2].dt_txt;
+                var description0 = weatherData.list[2].weather[0].description;  
+                var temp0 = weatherData.list[2].main.temp_max;
+                var tem0 = temp0 - 273;
+                $('#icon0').append("<img src=https://openweathermap.org/img/wn/"+ weatherData.list[2].weather[0].icon +"@2x.png>");
+                $('#date0').append(date0.substring(0,10));
+                $('#week0').append(getDayOfWeek(date0.substring(0,10)));
+                $('#temp0').append(description0 + "   " + tem0.toFixed(2)+"&deg;C");
+         }
+		 
+		  $.getJSON(apiCall,weatherCallback1);
+		  
+		 function weatherCallback1(weatherData){
+		        var date0 = weatherData.list[10].dt_txt;
+		        var description0 = weatherData.list[10].weather[0].description;  
+		        var temp0 = weatherData.list[8].main.temp_max;
+		        var tem0 = temp0 - 273;
+		        $('#icon1').append("<img src=https://openweathermap.org/img/wn/"+ weatherData.list[10].weather[0].icon +"@2x.png>");
+		        $('#date1').append(date0.substring(0,10));
+		        $('#week1').append(getDayOfWeek(date0.substring(0,10)));
+		        $('#temp1').append(description0 + "   " + tem0.toFixed(2)+"&deg;C");
+		 }
+		 
+		 $.getJSON(apiCall,weatherCallback2);
+		  
+		 function weatherCallback2(weatherData){
+		        var date0 = weatherData.list[18].dt_txt;
+		        var description0 = weatherData.list[18].weather[0].description;  
+		        var temp0 = weatherData.list[18].main.temp_max;
+		        var tem0 = temp0 - 273;
+		        $('#icon2').append("<img src=https://openweathermap.org/img/wn/"+ weatherData.list[18].weather[0].icon +"@2x.png>");
+		        $('#date2').append(date0.substring(0,10));
+		        $('#week2').append(getDayOfWeek(date0.substring(0,10)));
+		        $('#temp2').append(description0 + "   " + tem0.toFixed(2)+"&deg;C");
+		 }
+		 
+         function getDayOfWeek(date) {
+            var dayOfWeek = new Date(date).getDay();    
+            return isNaN(dayOfWeek) ? null : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dayOfWeek];
+        }
+            console.log(weatherData.list[1].dt_txt);
+        </script>
+<body id="page-top">
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav" style="height: 100;">
+        <div class="container"><img style="background-image: url(&quot;assets/img/Logo_02.png&quot;);width: 40px;height: 70px;max-height: auto;" src="assets/img/Logo_02.png"><a class="navbar-brand" href="#page-top">Diving Bird</a><button data-toggle="collapse" data-target="#navbarResponsive"
+                class="navbar-toggler navbar-toggler-right" type="button" data-toogle="collapse" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <div class="collapse navbar-collapse"
+                id="navbarResponsive">
+                <ul class="nav navbar-nav ml-auto text-uppercase">
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="mapv3.html">Route selector</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#portfolio">Benefits</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#weather">Weather Forecast</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                    <li class="nav-item" role="presentation"></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead" style="opacity: 0.93;filter: blur(0px) brightness(103%) grayscale(0%) sepia(0%);background-color: #ada1a1;background-image: url(&quot;assets/img/kid-walking-to-school.jpeg&quot;);">
+        <div class="container">
+            <div class="intro-text" style="opacity: 1;width: 1121;">
+                <div class="intro-lead-in"><span class="text-primary" style="color: rgb(11,11,11);font-family: 'Droid Serif';">Drive Away the fear of sending kids alone to school!</span></div>
+                <div class="intro-heading text-uppercase" style="font-family: 'Kaushan Script', cursive;"><span class="text-monospace text-capitalize" style="color: rgb(11,11,11);font-size: 20px;font-family: Actor, sans-serif;opacity: 0.67;filter: grayscale(29%);">at age of 11-16, With right supervision and proper guidance your kids can now go to school safely and independently by themself.&nbsp; &nbsp;</span></div>
+                <a
+                    class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" href="#services">Tell me more</a>
+            </div>
+        </div>
+    </header>
+    <section id="services" style="background-color: #5257da;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase section-heading">Services</h2>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-child fa-stack-1x fa-inverse"></i></span>
+                    <h4 class="section-heading">Benefits</h4>
+                    <p class="text-muted">Know the benefits of sending kids independently to school. It makes them confidental both mentally and physically.&nbsp;<br>Not&nbsp;being&nbsp;active&nbsp;is one of the reasons why&nbsp;kids&nbsp;and adults can become overweight or
+                        obese.<br><br></p>
+                </div>
+                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-sun-o fa-stack-1x fa-inverse"></i></span>
+                    <h4 class="section-heading">Today's Update</h4>
+                    <h4 class="section-heading"></h4>
+                    <p class="text-muted">Be Aware of updates today! There's a lot happening around you which you might be missing. Yes, there may be roadblock or worse weather so you have to pick your kids back from school.</p>
+                </div>
+                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-map-marker fa-stack-1x fa-inverse"></i></span>
+                    <h4 class="section-heading">Route Selector</h4>
+                    <p class="text-muted">Moved into a new locction and wondering what would be best way to send your kids? Confused on how to prepare them based on means of transport? We are here to make your life easier</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="weather">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase">Melbourne Weather Forecast</h2>
+                    <h3 class="text-muted section-subheading"> &nbsp; </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-group timeline">
+                        <li class="list-group-item">
+                            <div class="timeline-image"><p id="icon0"></p></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 id="date0"></h4>
+									<h4 id="week0"></h4>
+									<h4 id="temp0"></h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item timeline-inverted">
+                            <div class="timeline-image"><p id="icon1"></p></div>
+                            <div class="timeline-panel">
+                               <div class="timeline-heading">
+                                   <h4 id="date1"></h4>
+                               	<h4 id="week1"></h4>
+                               	<h4 id="temp1"></h4>
+                               </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="timeline-image"><p id="icon2"></p></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 id="date2"></h4>
+                                	<h4 id="week2"></h4>
+                                	<h4 id="temp2"></h4>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="about" class="bg-light"></section>
+    <footer style="background-color: #0052cc;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4"><span class="copyright">Copyright&nbsp;© Diving Bird 2020</span></div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/agency.js"></script>
+</body>
+
+</html>
