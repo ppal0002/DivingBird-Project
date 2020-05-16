@@ -297,10 +297,7 @@
 			    <div id="type-selector" class="pac-controls">
 			       <input type="radio" id="Choice1"
 			            name="contact" value="WALKING">
-			       <label for="Choice1">Walking</label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
-			       <input type="radio" id="Choice2"
-			            name="contact" value="DRIVING">
-			       <label for="Choice2">Car</label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
+			       <label for="Choice1">Walking</label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
 			       <input type="radio" id="Choice3"
 			            name="contact" value="BICYCLING">
 			       <label for="Choice3">Cycling</label> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp
@@ -423,9 +420,7 @@
 			document.getElementById("goBtn").addEventListener("click", function(){
 				//alert("hello");
 				document.getElementById("walk").style.display = "none";
-				document.getElementById("walk2").style.display = "none";
-				document.getElementById("drive").style.display = "none";
-				document.getElementById("drive2").style.display = "none";
+				document.getElementById("walk2").style.display = "none";			
 				document.getElementById("cycle").style.display = "none";
 				document.getElementById("cycle2").style.display = "none";
 				document.getElementById("bus").style.display = "none";
@@ -437,12 +432,6 @@
 					  document.getElementById("walk2").style.display = "block";
 					  document.getElementById("precautionname").innerHTML = "<br>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Precaution for WALKING <br> &nbsp ";
 					  document.getElementById("preparationname").innerHTML = "<br>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Preparation for WALKING <br> &nbsp ";
-			    }else if(document.getElementById("Choice2").checked){
-			    	  var travelmode = document.getElementById("Choice2").value;
-					  document.getElementById("drive").style.display = "block";
-					  document.getElementById("drive2").style.display = "block";
-					  document.getElementById("precautionname").innerHTML = "<br>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Precaution for DRIVING <br> &nbsp ";
-					  document.getElementById("preparationname").innerHTML = "<br>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Preparation for DRIVING <br> &nbsp ";
 			    }else if(document.getElementById("Choice3").checked){
 			    	  var travelmode = document.getElementById("Choice3").value;
 					  document.getElementById("cycle").style.display = "block";
