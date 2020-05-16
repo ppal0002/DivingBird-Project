@@ -402,7 +402,7 @@
 		      zoom: 13,
 		      center: {lat: -37.8158784, lng: 144.9641766}
 		    });
-			
+			var trafficLayer = new google.maps.TrafficLayer();
 			var input = document.getElementById('start');
 			var input2 = document.getElementById('end');
 			var card = document.getElementById('pac-card');
@@ -456,6 +456,7 @@
 					  document.getElementById("precautionname").innerHTML = "<br>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Precaution for PUBLIC TRANSIT <br> &nbsp ";
 					  document.getElementById("preparationname").innerHTML = "<br>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Preparation for PUBLIC TRANSIT <br> &nbsp ";
 			    }
+			    trafficLayer.setMap(map);
 			    calculateAndDisplayRoute(directionsRenderer, directionsService, travelmode, map);
 			    document.getElementById("preparation").style.display = "block";
 			    document.getElementById("precaution").style.display = "block";
