@@ -18,6 +18,28 @@
     <link rel="stylesheet" href="assets/css/Dark-NavBar-2.css">
     <link rel="stylesheet" href="assets/css/Dark-NavBar.css">
 </head>
+	    <script type="text/javascript">
+        function password() {
+        var testV = 1;
+        var pass1 = prompt('Please enter the password:','');
+        while (testV < 3) {
+        if (!pass1)
+        history.go(-1);
+        if (pass1 == "divingbird") {
+        alert('Correct!');
+        break;
+        }
+        testV+=1;
+        var pass1 =
+        prompt('Sorry password incorrect(','');
+        }
+        if (pass1!="password" & testV ==3)
+        history.go(-1);
+        return " ";
+        }
+        document.write(password());
+        </script>
+	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
              var apiCall = 'https://api.openweathermap.org/data/2.5/forecast?q=melbourne&appid=b5eb0cf15be970e242fbfb9641fdd98a';
