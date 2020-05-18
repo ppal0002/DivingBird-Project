@@ -19,6 +19,55 @@
     <link rel="stylesheet" href="assets/css/Dark-NavBar.css">
 </head>
 
+<script>
+             var apiCall = 'https://api.openweathermap.org/data/2.5/forecast?q=melbourne&appid=b5eb0cf15be970e242fbfb9641fdd98a';
+        
+            $.getJSON(apiCall,weatherCallback);
+         
+            function weatherCallback(weatherData){
+                var date0 = weatherData.list[2].dt_txt;
+                var description0 = weatherData.list[2].weather[0].description;  
+                var temp0 = weatherData.list[2].main.temp_max;
+                var tem0 = temp0 - 273;
+                $('#icon0').append("<img src=https://openweathermap.org/img/wn/"+ weatherData.list[2].weather[0].icon +"@2x.png>");
+                $('#date0').append(date0.substring(0,10));
+                $('#week0').append(getDayOfWeek(date0.substring(0,10)));
+                $('#temp0').append(description0 + "   " + tem0.toFixed(2)+"&deg;C");
+         }
+		 
+		  $.getJSON(apiCall,weatherCallback1);
+		  
+		 function weatherCallback1(weatherData){
+		        var date0 = weatherData.list[10].dt_txt;
+		        var description0 = weatherData.list[10].weather[0].description;  
+		        var temp0 = weatherData.list[8].main.temp_max;
+		        var tem0 = temp0 - 273;
+		        $('#icon1').append("<img src=https://openweathermap.org/img/wn/"+ weatherData.list[10].weather[0].icon +"@2x.png>");
+		        $('#date1').append(date0.substring(0,10));
+		        $('#week1').append(getDayOfWeek(date0.substring(0,10)));
+		        $('#temp1').append(description0 + "   " + tem0.toFixed(2)+"&deg;C");
+		 }
+		 
+		 $.getJSON(apiCall,weatherCallback2);
+		  
+		 function weatherCallback2(weatherData){
+		        var date0 = weatherData.list[18].dt_txt;
+		        var description0 = weatherData.list[18].weather[0].description;  
+		        var temp0 = weatherData.list[18].main.temp_max;
+		        var tem0 = temp0 - 273;
+		        $('#icon2').append("<img src=https://openweathermap.org/img/wn/"+ weatherData.list[18].weather[0].icon +"@2x.png>");
+		        $('#date2').append(date0.substring(0,10));
+		        $('#week2').append(getDayOfWeek(date0.substring(0,10)));
+		        $('#temp2').append(description0 + "   " + tem0.toFixed(2)+"&deg;C");
+		 }
+		 
+         function getDayOfWeek(date) {
+            var dayOfWeek = new Date(date).getDay();    
+            return isNaN(dayOfWeek) ? null : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dayOfWeek];
+        }
+            console.log(weatherData.list[1].dt_txt);
+        </script>
+
 <body id="page-top">
     <div>
         <nav class="navbar navbar-light navbar-expand-md fixed-top navigation-clean-button" style="height:80px;background-color:#37434d;color:#ffffff;">
@@ -80,6 +129,52 @@
 		<iframe style = "width: 60%; height: 500px; margin-left: 25%;" id="example1" src="https://divingbird.shinyapps.io/Newdatavisualization/" frameborder="0" scrolling="no"></iframe>    
 		  </div>
 	</section>
+	<section id="weather">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase">Melbourne Weather Forecast</h2>
+                    <h3 class="text-muted section-subheading"> &nbsp; </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-group timeline">
+                        <li class="list-group-item">
+                            <div class="timeline-image"><p id="icon0"></p></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 id="date0"></h4>
+									<h4 id="week0"></h4>
+									<h4 id="temp0"></h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item timeline-inverted">
+                            <div class="timeline-image"><p id="icon1"></p></div>
+                            <div class="timeline-panel">
+                               <div class="timeline-heading">
+                                   <h4 id="date1"></h4>
+                               	<h4 id="week1"></h4>
+                               	<h4 id="temp1"></h4>
+                               </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="timeline-image"><p id="icon2"></p></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 id="date2"></h4>
+                                	<h4 id="week2"></h4>
+                                	<h4 id="temp2"></h4>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer style="background-color: #0052cc;">
         <div class="container">
             <div class="row">
