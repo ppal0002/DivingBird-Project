@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="assets/css/Dark-NavBar-2.css">
     <link rel="stylesheet" href="assets/css/Dark-NavBar.css">
 </head>
-	    <script type="text/javascript">
+<script type="text/javascript">
+	//set password for accessing the website
         function password() {
         var testV = 1;
         var pass1 = prompt('Please enter the password:','');
@@ -42,14 +43,19 @@
 	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-             var apiCall = 'https://api.openweathermap.org/data/2.5/forecast?q=melbourne&appid=b5eb0cf15be970e242fbfb9641fdd98a';
-        
+        //weather api with the location set to Melbourne  
+	var apiCall = 'https://api.openweathermap.org/data/2.5/forecast?q=melbourne&appid=b5eb0cf15be970e242fbfb9641fdd98a';
+            //get response from API
             $.getJSON(apiCall,weatherCallback);
-         
+         // function for today's weather
             function weatherCallback(weatherData){
+		//the data information    
                 var date0 = weatherData.list[2].dt_txt;
-                var description0 = weatherData.list[2].weather[0].description;  
+		//description of weather
+                var description0 = weatherData.list[2].weather[0].description; 
+		// temperature
                 var temp0 = weatherData.list[2].main.temp_max;
+		// convert to degrees centigrade
                 var tem0 = temp0 - 273;
                 $('#icon0').append("<img src=https://openweathermap.org/img/wn/"+ weatherData.list[2].weather[0].icon +"@2x.png>");
                 $('#date0').append(date0.substring(0,10));
@@ -58,7 +64,7 @@
          }
 		 
 		  $.getJSON(apiCall,weatherCallback1);
-		  
+		 // function for tomorrow's weather 
 		 function weatherCallback1(weatherData){
 		        var date0 = weatherData.list[10].dt_txt;
 		        var description0 = weatherData.list[10].weather[0].description;  
@@ -71,7 +77,7 @@
 		 }
 		 
 		 $.getJSON(apiCall,weatherCallback2);
-		  
+		  // function for weather of the day after tomorrow
 		 function weatherCallback2(weatherData){
 		        var date0 = weatherData.list[18].dt_txt;
 		        var description0 = weatherData.list[18].weather[0].description;  
