@@ -59,7 +59,7 @@
                 $('#icon0').append("<img src=https://openweathermap.org/img/wn/"+ weatherData.list[2].weather[0].icon +"@2x.png>");
                 $('#date0').append(date0.substring(0,10));
                 $('#week0').append(getDayOfWeek(date0.substring(0,10)));
-                $('#temp0').append(description0 + "   " + tem0.toFixed(2)+"&deg;C");
+                $('#temp0').append(description0 + "   " + tem0.toFixed(0)+"&deg;C");
          }
 		 
 		  $.getJSON(apiCall,weatherCallback1);
@@ -72,7 +72,7 @@
 		        $('#icon1').append("<img src=https://openweathermap.org/img/wn/"+ weatherData.list[10].weather[0].icon +"@2x.png>");
 		        $('#date1').append(date0.substring(0,10));
 		        $('#week1').append(getDayOfWeek(date0.substring(0,10)));
-		        $('#temp1').append(description0 + "   " + tem0.toFixed(2)+"&deg;C");
+		        $('#temp1').append(description0 + "   " + tem0.toFixed(0)+"&deg;C");
 		 }
 		 
 		 $.getJSON(apiCall,weatherCallback2);
@@ -85,7 +85,7 @@
 		        $('#icon2').append("<img src=https://openweathermap.org/img/wn/"+ weatherData.list[18].weather[0].icon +"@2x.png>");
 		        $('#date2').append(date0.substring(0,10));
 		        $('#week2').append(getDayOfWeek(date0.substring(0,10)));
-		        $('#temp2').append(description0 + "   " + tem0.toFixed(2)+"&deg;C");
+		        $('#temp2').append(description0 + "   " + tem0.toFixed(0)+"&deg;C");
 		 }
 		 
          function getDayOfWeek(date) {
