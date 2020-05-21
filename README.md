@@ -1,9 +1,9 @@
 # DivingBird-Project
 Industry Experience project
 
-##asset folder: <h2> 
+<h2> asset folder: 
   Contain material for web design that created by using bootstrap.
  
-##oldIdea folder: <h2>
+ <h2> oldIdea folder:
   Contain history file that had developed as previous version of project product.
   
