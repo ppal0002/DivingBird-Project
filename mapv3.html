@@ -16,9 +16,8 @@
     <link rel="stylesheet" href="assets/css/Dark-NavBar-1.css">
     <link rel="stylesheet" href="assets/css/Dark-NavBar-2.css">
     <link rel="stylesheet" href="assets/css/Dark-NavBar.css">
-		<style>
-		  /* Always set the map height explicitly to define the size of the div
-		   * element that contains the map. */
+<style>
+
 		  #map {
 		    height: 100%;
 			width: 80%;
@@ -241,7 +240,7 @@
 		}
 
 		
-		</style>
+	</style>
 	</head>
 	<body style="background-color: #e5e5ff;", >
 		<header class="masthead" style="padding-top:80px; background-image:url('assets/img/header-bg.jpg');">
@@ -392,11 +391,14 @@
 		      zoom: 13,
 		      center: {lat: -37.8158784, lng: 144.9641766}
 		    });
+			//traffic layer
 			var trafficLayer = new google.maps.TrafficLayer();
 			var input = document.getElementById('start');
 			var input2 = document.getElementById('end');
+			//the input card at right top of map
 			var card = document.getElementById('pac-card');
 			map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
+			//auto complete
 			var autocomplete = new google.maps.places.Autocomplete(input);
 			var autocomplete2 = new google.maps.places.Autocomplete(input2);
 			autocomplete.bindTo('bounds', map);
@@ -412,15 +414,14 @@
 		   // calculateAndDisplayRoute(directionsRenderer, directionsService, travelmode, map);
 		    // Listen to change events
 			document.getElementById("goBtn").addEventListener("click", function(){
-				//alert("hello");
+			        //set all divs for precaution and preparation to hidden before searching
 				document.getElementById("walk").style.display = "none";
 				document.getElementById("walk2").style.display = "none";
-				
 				document.getElementById("cycle").style.display = "none";
 				document.getElementById("cycle2").style.display = "none";
 				document.getElementById("bus").style.display = "none";
 				document.getElementById("bus2").style.display = "none";
-				
+				//based on travelmode selected set the value to travel mode input and set content for precautions and preparations
 			    if(document.getElementById("Choice1").checked){
 			    	  var travelmode = document.getElementById("Choice1").value;
                       document.getElementById("walk").style.display = "block";
@@ -440,15 +441,18 @@
 					  document.getElementById("precautionname").innerHTML = "<br>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Precaution for PUBLIC TRANSIT <br> &nbsp ";
 					  document.getElementById("preparationname").innerHTML = "<br>  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Preparation for PUBLIC TRANSIT <br> &nbsp ";
 			    }
+				//add traffic layer
 				trafficLayer.setMap(map);
+				//based on the travel mode selected to calculate the route
 			    calculateAndDisplayRoute(directionsRenderer, directionsService, travelmode, map);
+				//show precautions and preparations
 			    document.getElementById("preparation").style.display = "block";
 			    document.getElementById("precaution").style.display = "block";
 			});
 		   
 		  }
 		
-		
+		// function for calculating route
 		function calculateAndDisplayRoute(directionsRenderer, directionsService, travelmode, map) {
 
 		    directionsService.route({
