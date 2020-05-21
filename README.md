@@ -14,11 +14,12 @@ Industry Experience project
 ### index.html
 - This file is developed to create home page of website. This contains password, header, tableau for data visualization and weather plugin. 
 - Tableau is used to create data visualization for accident records. 
+- Weather API 
 
 ### mapv3.html
 - This file is developed to create Route Selector page. This contain code for Route Selector page with elements and Google Map API. 
 - Google Map API 
-- Weather API 
+
 
 ### index-2.html
 - This file contains elements for Benefits page. 
