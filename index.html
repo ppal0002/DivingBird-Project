@@ -146,25 +146,36 @@
     </section>
      <section id="data" class="bg-light">
 		<div class="col-lg-12 text-center">
-		    <h2 class="text-uppercase">The pie chart shows the accident for each kind of travel mode from 2015 to 2019</h2>
+		    <h2 class="text-uppercase">The chart shows the accidents number in Victoria</h2>
 		    <h3 class="text-muted section-subheading"> &nbsp; </h3>
 		</div>
-		<div class="videoWrapper">
-		<iframe style = "width: 60%; height: 500px; margin-left: 25%;" id="example1" src="https://divingbird.shinyapps.io/Newdatavisualization/" frameborder="0" scrolling="no"></iframe>    
-		  </div>
-	         <div style= "margin-left: 10%;">
+		<div class='tableauPlaceholder' id='viz1590025157075' style="margin-left: 30%;">
+			 <noscript>
+				 <a href='#'>
+					 <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Di&#47;Divingbird_accident&#47;Dashboard1&#47;1_rss.png' style='border: none' />
+					 </a>
+			  </noscript>
+			 <object class='tableauViz'  style='display:none;'>
+			  <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+			  <param name='embed_code_version' value='3' /> 
+			 <param name='site_root' value='' />
+			 <param name='name' value='Divingbird_accident&#47;Dashboard1' />
+			 <param name='tabs' value='no' />
+			 <param name='toolbar' value='yes' />
+			 <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Di&#47;Divingbird_accident&#47;Dashboard1&#47;1.png' /> 
+			 <param name='animate_transition' value='yes' />
+			 <param name='display_static_image' value='yes' />
+			 <param name='display_spinner' value='yes' />
+			 <param name='display_overlay' value='yes' />
+			 <param name='display_count' value='yes' />
+			 </object>
+		</div> 
+	       <div style= "margin-left: 10%;">
         <p> How to: <br><br>
 
-            This pie chart shows you the statistic of accident in Melbourne from 2015 to 2019. User can adjust data by using left control panel. <br>
-            2 Factors that can be adjusted are Year and Travel mode. Year of data can be scope by using the slide bar moves to specific period. <br>
-            And the travel mode can be selected by using the drop-down list. <br> <br>
-            
-            Finding:<br><br>
-    
-            As we can see that the rate of accident is not high. And we can reduce it by preparing kids well. <br>
-            Victoria Government release many campaigns to encourage kids walking or cycling to school. This benefits to kids more than parent think. <br>
-            It improves kids dependent, health and socialize. <br>
-            </p>  
+            This chart shows you the statistic of accident numbers in Victoria. User can adjust data by using right control panel. <br>
+            2 Factors that can be adjusted are Year and Age group. For the second chart user can choose a certain year. <br>
+            Both of year and age group can be selected from the control panel. <br> <br> 
 
     </div>
 	</section>
@@ -225,6 +236,30 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="assets/js/agency.js"></script>
+    <script type='text/javascript'>   
+      var divElement = document.getElementById('viz1590025157075');                   
+	   var vizElement = divElement.getElementsByTagName('object')[0];                    
+	   if ( divElement.offsetWidth > 800 ) { 
+		   vizElement.style.minWidth='420px';
+		   vizElement.style.maxWidth='650px';
+		   vizElement.style.width='100%';
+		   vizElement.style.minHeight='587px';
+		   vizElement.style.maxHeight='887px';
+		   vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+		   } else if ( divElement.offsetWidth > 500 ) 
+		   { vizElement.style.minWidth='420px';
+		   vizElement.style.maxWidth='650px';
+		   vizElement.style.width='100%';
+		   vizElement.style.minHeight='587px';
+		   vizElement.style.maxHeight='887px';
+		   vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+		   } else 
+		   { vizElement.style.width='100%';vizElement.style.height='877px';
+		   }                     
+		   var scriptElement = document.createElement('script');                    
+		   scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+		   vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+      </script>
 </body>
 
 </html>
