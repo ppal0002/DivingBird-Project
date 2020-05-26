@@ -199,8 +199,7 @@
 						  background-color: #e6ac00;
 		       
 		}
-		
-		.pac-card {
+	        .pac-card {
 		        margin: 10px 10px 0 0;
 		        border-radius: 2px 0 0 2px;
 		        box-sizing: border-box;
@@ -208,7 +207,23 @@
 		        outline: none;
 		        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 		        background-color: #fff;
-		        font-family: 'Montserrant';
+		        font-family: Montserrant;
+				filter: alpha(opacity=50);
+				-moz-opacity: 0.5;
+				opacity: 0.5;
+		      }
+		.pac-card:hover {
+		        margin: 10px 10px 0 0;
+		        border-radius: 2px 0 0 2px;
+		        box-sizing: border-box;
+		        -moz-box-sizing: border-box;
+		        outline: none;
+		        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+		        background-color: #fff;
+		        font-family: Montserrant;
+				filter: alpha(opacity=100);
+				-moz-opacity: 1;
+				opacity: 1;
 		      }
 		#title {
 		        color: #fff;
