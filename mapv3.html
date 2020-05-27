@@ -18,11 +18,12 @@
     <link rel="stylesheet" href="assets/css/Dark-NavBar.css">
 <style>
 
-		  #map {
+		 #map {
+			
 		    height: 100%;
-			width: 80%;
-			margin-left: 10%;
-			margin-top: 60px;
+			width: 90%;
+			margin-left: 5%;
+			
 		  }
 		  
 		  #first{
@@ -199,32 +200,18 @@
 						  background-color: #e6ac00;
 		       
 		}
-	        .pac-card {
-		        margin: 10px 10px 0 0;
-		        border-radius: 2px 0 0 2px;
-		        box-sizing: border-box;
-		        -moz-box-sizing: border-box;
-		        outline: none;
-		        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-		        background-color: #fff;
-		        font-family: Montserrant;
-				filter: alpha(opacity=50);
-				-moz-opacity: 0.5;
-				opacity: 0.5;
-		      }
-		.pac-card:hover {
-		        margin: 10px 10px 0 0;
-		        border-radius: 2px 0 0 2px;
-		        box-sizing: border-box;
-		        -moz-box-sizing: border-box;
-		        outline: none;
-		        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-		        background-color: #fff;
-		        font-family: Montserrant;
-				filter: alpha(opacity=100);
-				-moz-opacity: 1;
-				opacity: 1;
-		      }
+
+	.pac-card {
+		         
+		          border-radius: 2px 0 0 2px;
+		          box-sizing: border-box;
+		          -moz-box-sizing: border-box;
+		          outline: none;
+		          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+		          background-color: #fff;
+		          font-family: Montserrant;
+		        }
+		
 		#title {
 		        color: #fff;
 		        background-color: #4d90fe;
@@ -398,8 +385,8 @@
 			var input = document.getElementById('start');
 			var input2 = document.getElementById('end');
 			//the input card at right top of map
-			var card = document.getElementById('pac-card');
-			map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
+			//var card = document.getElementById('pac-card');
+			//map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
 			//auto complete
 			var autocomplete = new google.maps.places.Autocomplete(input);
 			var autocomplete2 = new google.maps.places.Autocomplete(input2);
