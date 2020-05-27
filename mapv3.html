@@ -36,11 +36,10 @@
 		  }
 		  
 		  #showright {
-			   margin-top: 33px;
 		    height: 100%;
 			float: right;
-			width: 20%;
-			background-color: #A5D5E3;
+			width: 5%;
+
 		  }
 		  /* Optional: Makes the sample page fill the window. */
 		  html, body {
@@ -287,6 +286,12 @@
                 <button class="goButton" id="goBtn"> Search! </button>
 		    </div>	
 	    </div>
+		
+	    <div id="showright" style="display: none;">
+			<p> &nbsp </p><br><br><br><br><br><br><br><br><br><br><br><br>
+			<a href="#preparation"><img src="down.png" style="margin-left: 35%; margin-top: 150px; width: 40px;height: 60px;">  </a>
+		</div>
+		
 	    <div id="map"></div>
 		
         <div id="preparation" style="display: none;">
@@ -410,6 +415,8 @@
 				document.getElementById("cycle2").style.display = "none";
 				document.getElementById("bus").style.display = "none";
 				document.getElementById("bus2").style.display = "none";
+				//set the lebel to lead the user scroll down.
+				document.getElementById("showright").style.display = "block";
 				//based on travelmode selected set the value to travel mode input and set content for precautions and preparations
 			    if(document.getElementById("Choice1").checked){
 			    	  var travelmode = document.getElementById("Choice1").value;
