@@ -19,237 +19,233 @@
     <link rel="stylesheet" href="assets/css/Dark-NavBar.css">
 </head>
 
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+        //weather api with the location set to Melbourne  
+	var apiCall = 'https://api.openweathermap.org/data/2.5/forecast?id=2158177&units=metric&appid=b5eb0cf15be970e242fbfb9641fdd98a';
+            //get response from API
+            $.getJSON(apiCall,weatherCallback);
+         // function for today's weather
+            function weatherCallback(weatherData){
+		//the data information    
+                var date0 = weatherData.list[2].dt_txt;
+		//description of weather
+                var description0 = weatherData.list[2].weather[0].description; 
+		// temperature
+                var temp0 = weatherData.list[2].main.temp_max;
+                var tem0 = temp0;
+                $('#icon0').append("<img src=https://openweathermap.org/img/wn/"+ weatherData.list[2].weather[0].icon +"@2x.png>");
+                $('#date0').append(date0.substring(0,10));
+                $('#week0').append(getDayOfWeek(date0.substring(0,10)));
+                $('#temp0').append(description0 + "   " + tem0.toFixed(0)+"&deg;C");
+         }
+		 
+		  $.getJSON(apiCall,weatherCallback1);
+		 // function for tomorrow's weather 
+		 function weatherCallback1(weatherData){
+		        var date0 = weatherData.list[10].dt_txt;
+		        var description0 = weatherData.list[10].weather[0].description;  
+		        var temp0 = weatherData.list[8].main.temp_max;
+		        var tem0 = temp0;
+		        $('#icon1').append("<img src=https://openweathermap.org/img/wn/"+ weatherData.list[10].weather[0].icon +"@2x.png>");
+		        $('#date1').append(date0.substring(0,10));
+		        $('#week1').append(getDayOfWeek(date0.substring(0,10)));
+		        $('#temp1').append(description0 + "   " + tem0.toFixed(0)+"&deg;C");
+		 }
+		 
+		 $.getJSON(apiCall,weatherCallback2);
+		  // function for weather of the day after tomorrow
+		 function weatherCallback2(weatherData){
+		        var date0 = weatherData.list[18].dt_txt;
+		        var description0 = weatherData.list[18].weather[0].description;  
+		        var temp0 = weatherData.list[18].main.temp_max;
+		        var tem0 = temp0;
+		        $('#icon2').append("<img src=https://openweathermap.org/img/wn/"+ weatherData.list[18].weather[0].icon +"@2x.png>");
+		        $('#date2').append(date0.substring(0,10));
+		        $('#week2').append(getDayOfWeek(date0.substring(0,10)));
+		        $('#temp2').append(description0 + "   " + tem0.toFixed(0)+"&deg;C");
+		 }
+		 
+         function getDayOfWeek(date) {
+            var dayOfWeek = new Date(date).getDay();    
+            return isNaN(dayOfWeek) ? null : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][dayOfWeek];
+        }
+            console.log(weatherData.list[1].dt_txt);
+        </script>
+
 <body id="page-top">
-    <header class="masthead" style="background-image:url('assets/img/header-bg.jpg');">
+    <div>
         <nav class="navbar navbar-light navbar-expand-md fixed-top navigation-clean-button" style="height:80px;background-color:#37434d;color:#ffffff;">
-            <div class="container-fluid"><img src="assets/img/Logo_02.png" style="width: 45px;height: 75px;"><a class="navbar-brand" href="#" style="color: #fed136;">&nbsp;Diving Birds</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="container-fluid"><img src="assets/img/Logo_02.png" style="width: 45px;height: 75px;"><a class="navbar-brand" href="index.html" style="color: #fed136;">&nbsp;Diving Birds</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div
                     class="collapse navbar-collapse text-uppercase" id="navcol-1">
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item" role="presentation"><a class="nav-link" style="color:#ffffff;" href="index-1.html"><i class="fa fa-home"></i>&nbsp;Home</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" style="color:#ffffff;" href="index-1.html"><i class="fa fa-home"></i>&nbsp;Home</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" style="color:#ffffff;" href="mapv3.html"><i class="fa fa-map-marker"></i>&nbsp;Route&nbsp; Selector</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link active" style="color:#ffffff;" href="index-2.html"><i class="fa fa-star-o"></i>&nbsp;Benefits</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" style="color:#ffffff;" href="index-2.html"><i class="fa fa-star-o"></i>&nbsp;Benefits</a></li>
                         <li class="nav-item" role="presentation"></li>
                         <li class="nav-item" role="presentation"></li>
                     </ul>
             </div>
-            </div>
-        </nav>
-    </header>
-    <section id="services" style="padding: -69px;margin: -74px;"><img src="assets/img/main-category-tiles-img.png" style="width: 100%;">
-        <div class="carousel slide" data-ride="carousel" data-interval="475" id="carousel-1" style="margin: -37px;width: 100%;">
-            <div class="carousel-inner" role="listbox" style="margin: 2px;">
-                <div class="carousel-item active"><img class="w-100 d-block" src="assets/img/cecily_stry1.PNG" alt="Slide Image" style="padding: -40px;"></div>
-                <div class="carousel-item"><img class="w-100 d-block" src="assets/img/slide3.PNG" alt="Slide Image"></div>
-                <div class="carousel-item"><img class="w-100 d-block" src="assets/img/slide2.PNG" alt="Slide Image" style="padding: -61px;"></div>
-            </div>
-            <div><a class="carousel-control-prev" href="#carousel-1" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carousel-1" role="button"
-                    data-slide="next"><span class="carousel-control-next-icon"></span><span class="sr-only">Next</span></a></div>
-            <ol class="carousel-indicators" style="background-color: #5257da;">
-                <li data-target="#carousel-1" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-1" data-slide-to="1"></li>
-                <li data-target="#carousel-1" data-slide-to="2"></li>
-            </ol>
-        </div>
-    </section>
-    <section id="portfolio" class="bg-light" style="padding: 10px;background-color: #5257da;">
+    </div>
+    </nav>
+    </div>
+    <header class="masthead" style="padding-top:140px; opacity: 0.93;filter: blur(0px) brightness(103%) grayscale(0%) sepia(0%);background-color: #ada1a1;background-image: url(&quot;assets/img/kid-walking-to-school.jpeg&quot;);">
         <div class="container">
-            <div class="row" style="padding: -6px;background-color: #5257da;">
-                <div class="col-sm-6 col-md-4 portfolio-item" style="background-color: #5257da;">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/CyclingRton_0038.jpg" style="height: 262.487px;"></a>
-                    <div class="portfolio-caption">
-                        <h4>Why Ride to School</h4>
-                        <p class="text-muted" style="font-family: Montserrat, sans-serif;">An active journey to school allows children to learn about their local area, develop their social networks, and gain independence.<br>Did you know school aged students require a minimum of 60 minutesper day to maintain a healthy
-                            lifestyle?&nbsp; &nbsp;<br>Riding bicycle to and from school can help them to reach their requirement of physical activity each day. The number of children who are physically active each day has significantly declined over
-                            the last 50 years. In the 1970s, <strong>8 out of 10 </strong>students rode or walked to school, but today the national average is only&nbsp;<strong>2 out of 10.</strong><br></p>
-                    </div>
+            <div class="intro-text" style="opacity: 1;width: 1121;padding: 124px;"><strong style="color: rgb(254,209,54);font-size: 27px;padding: 0px;margin: 13px;height: -4px;"><br><br>Drive Away the fear of sending kids alone to school!<br><br><br></strong>
+                <div class="intro-heading text-uppercase" style="font-family: 'Kaushan Script', cursive;padding: -21px;margin: 11px;width: 937px;"><span class="text-monospace text-capitalize" style="color: rgb(11,11,11);font-size: 20px;font-family: Actor, sans-serif;opacity: 0.67;filter: grayscale(29%);margin: -3px;">at age of 11-16, With right supervision and proper guidance your kids can now go to school safely and independently by themself.&nbsp; &nbsp;</span></div>
+                <a
+                    class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" href="#services" style="padding: 19px;">Services</a>
+            </div>
+        </div>
+    </header>
+    <section id="services" style="background-color: #5257da;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase section-heading">Services</h2>
                 </div>
-                <div class="col-sm-6 col-md-4 portfolio-item" style="background-color: #5257da;">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/Schoolkidsimage.jpg" style="height: 262.487px;"></a>
-                    <div class="portfolio-caption">
-                        <h4>Walk to School</h4>
-                        <p class="text-muted" style="font-family: Montserrat, sans-serif;">Every October, VicHealth’s Walk to School encourages Victorian primary school kids to walk, ride or scoot to and from school.<br>Along with the health benefits, walking to school has benefits for the whole community. It reduces
-                            traffic congestion, saves on parking, helps us connect with family and friends and even saves the environment!&nbsp;<br>October 2019, an estimated 186,600 students - the highest in the initiative's 14-year history - walked,
-                            to school, almost 40,000 more children than in 2018. That's around <strong>one in three </strong>primary school aged kids in Victoria.<br></p>
-                    </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-child fa-stack-1x fa-inverse"></i></span>
+                    <h4 class="section-heading"><a href="index-2.html">Benefits</a></h4>
+                    <p class="text-center" style="font-family: 'Roboto Slab', serif;"><strong>Know the benefits of sending kids independently to school. Find how much confidence it gives them both mentally and physically.&nbsp;</strong><br><strong>Not&nbsp;being&nbsp;active&nbsp;is one of the reasons why&nbsp;kids can become overweight or obese.</strong><br><br><br></p>
                 </div>
-                <div class="col-sm-6 col-md-4 portfolio-item" style="background-color: #5257da;">
-                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content"><i class="fa fa-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/SchoolBuses_cropped.png" style="height: 262.487px;"></a>
-                    <div class="portfolio-caption">
-                        <h4>Why to use public transport</h4>
-                        <p class="text-muted" style="font-family: Montserrat, sans-serif;"><br>&nbsp; &nbsp; &nbsp; &nbsp;Being able to use public transport is a key life skill every high school kid must aware. <br>&nbsp; &nbsp; If you can work out public transport, you can probably <br>navigate around any city in the
-                            world, even if you don’t speak the language. <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Given the global world we <br>live in, we can certainly expect our children will be far more frequent travellers than we are, either for <br>work,
-                            study, leisure or to connect with family and friends<br><br></p>
-                    </div>
+                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-sun-o fa-stack-1x fa-inverse"></i></span>
+                   <h4 class="section-heading"><a href="#weather">Weather Forecast</a></h4>
+                    <p class="text-center" style="font-family: 'Roboto Slab', serif;"><strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Be Aware of updates today! There's a </strong><br><strong>lot happening around you which you might be missing. Yes, there may be worse </strong><br><strong>weather so you have to pick your kids back from school. Scroll down to know more!</strong><br><br></p>
+                    <h4
+                        class="section-heading"></h4>
+                        <p class="text-muted" style="font-family: Montserrat, sans-serif;"></p>
                 </div>
-                <div class="col"><img src="assets/img/CaptureWalk.PNG" style="width: 100%;"></div>
+                <div class="col-md-4"><span class="fa-stack fa-4x"><i class="fa fa-circle fa-stack-2x text-primary"></i><i class="fa fa-map-marker fa-stack-1x fa-inverse"></i></span>
+                    <h4 class="section-heading"><a href="mapv3.html">Route Selector</a></h4>
+                    <p><strong>Moved into a new location and wondering what would be best way to send your kids? Confused on how to prepare them based on means of transport? We are here to make your life easier</strong><br><br><br></p>
+                </div>
+            </div>
+		 <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" href="#data" style="padding: 19px; margin-left: 40%;">Do You Know Children are less prone to accidents in Victoria? </a>
+        </div>
+    </section>
+     <section id="data" class="bg-light">
+		<div class="col-lg-12 text-center">
+		    <h2 class="text-uppercase">The chart shows the accidents number in Victoria</h2>
+		    <h3 class="text-muted section-subheading"> &nbsp; </h3>
+		</div>
+		<div class='tableauPlaceholder' id='viz1590025157075' style="margin-left: 30%;">
+			 <noscript>
+				 <a href='#'>
+					 <img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Di&#47;Divingbird_accident&#47;Dashboard1&#47;1_rss.png' style='border: none' />
+					 </a>
+			  </noscript>
+			 <object class='tableauViz'  style='display:none;'>
+			  <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
+			  <param name='embed_code_version' value='3' /> 
+			 <param name='site_root' value='' />
+			 <param name='name' value='Divingbird_accident&#47;Dashboard1' />
+			 <param name='tabs' value='no' />
+			 <param name='toolbar' value='yes' />
+			 <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Di&#47;Divingbird_accident&#47;Dashboard1&#47;1.png' /> 
+			 <param name='animate_transition' value='yes' />
+			 <param name='display_static_image' value='yes' />
+			 <param name='display_spinner' value='yes' />
+			 <param name='display_overlay' value='yes' />
+			 <param name='display_count' value='yes' />
+			 </object>
+		</div> 
+	     </div>
+		 <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" role="button" href="index-2.html" style="padding: 19px; margin-left: 40%;">Know more about Benefits now</a>
+        </div>
+	       <div style= "margin-left: 10%;">
+        <p> How to: <br><br>
+
+            This chart shows you the statistic of accident numbers in Victoria. User can adjust data by using right control panel. <br>
+            2 Factors that can be adjusted are Year and Age group. For the second chart user can choose a certain year. <br>
+            Both of year and age group can be selected from the control panel. <br> <br> 
+
+    </div>
+	</section>
+	<section id="weather">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase">Melbourne Weather Forecast</h2>
+                    <h3 class="text-muted section-subheading"> &nbsp; </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-group timeline">
+                        <li class="list-group-item">
+                            <div class="timeline-image"><p id="icon0"></p></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 id="date0"></h4>
+									<h4 id="week0"></h4>
+									<h4 id="temp0"></h4>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item timeline-inverted">
+                            <div class="timeline-image"><p id="icon1"></p></div>
+                            <div class="timeline-panel">
+                               <div class="timeline-heading">
+                                   <h4 id="date1"></h4>
+                               	<h4 id="week1"></h4>
+                               	<h4 id="temp1"></h4>
+                               </div>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div class="timeline-image"><p id="icon2"></p></div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4 id="date2"></h4>
+                                	<h4 id="week2"></h4>
+                                	<h4 id="temp2"></h4>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
-       <footer style="background-color: #0052cc;">
+    <footer style="background-color: #0052cc;">
         <div class="container">
             <div class="row">
                 <div class="col-md-4"><span class="copyright">Copyright&nbsp;© Diving Bird 2020</span></div
             </div>
         </div>
     </footer>
-    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal1">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto" style="background-color: #ffffff;">
-                                <div class="modal-body">
-                                    <h2 class="text-uppercase" style="font-size: 34px;color: rgb(254,209,54);">Here are some tips for riding to school</h2><img src="assets/img/Schoolboy-1200x833.png" style="width: 100%;height: 372px;">
-                                    <p class="text-left" style="color: rgb(10,10,9);">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*Do some practice rides on the weekend so you and your child are comfortable with the ride and youknow how long it will take.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *Review and complete
-                                        our Bike Basics Series to get you moving safely and comfortably.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*You can ride on the footpath in Victoria as long as you give way to pedestrians.<br>&nbsp; &nbsp; &nbsp;
-                                        &nbsp; &nbsp; &nbsp;*Choose the safest route, even if it’s a bit longer.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*Take a wet washer for a quick cool down and freshen up in summer.<br>&nbsp; &nbsp; &nbsp; &nbsp;
-                                        &nbsp; &nbsp;*Part way is OK … Even parking the car 500–750m away from the school gate and walking the last five minutes still gives your children the opportunity to get a bit of fresh air and activity before they
-                                        start their school day.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *Team up with neighbours or school mates.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *If you don’t have a bike – ride a scooter or just walk.<br>&nbsp;
-                                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *Find a safe spot to lock the bike.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *Always wear a helmet.<br> Some benefits of riding to school are:<br>&nbsp; &nbsp; &nbsp; &nbsp;
-                                        &nbsp; *The more children who ride, scoot, or walk to school, the fewer cars there will be on the roads and the less traffic congestion there will be around schools.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *Students
-                                        who actively travel arrive awake and alert—improving their concentration, recall, and ability to understand the material being taught.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *Physically active students are healthier,
-                                        happier, and more socially connected.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *Physical activity is ranked second to tobacco control as the most important factor<br> in
-                                        disease prevention in Australia.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *Bike riding is a pollution-free mode of transport.<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *Riding, walking, or scootering with your child gives
-                                        you an opportunity to teach them road safety skills<br><br></p><button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal2">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <div class="modal-body">
-                                    <h2 class="text-uppercase" style="font-size: 38px;color: rgb(254,209,54);">walk to school</h2>
-                                    <p class="item-intro text-muted">Make your kids participate in victorian state's initiative and win exciting prizes.</p><img src="assets/img/FactSheet.PNG" style="width: 100%;">
-                                    <p class="text-center"><br><strong>How does Walk to School work?</strong><br>Participating schools will encourage students to walk, ride<br>or scoot to school for the month of October, even part of the<br>way is okay. Schools may record how
-                                        many times a student<br>walks, rides or scoots to school using a classroom calendar<br>to encourage involvement.&nbsp;<br><br><strong>What data do schools collect?</strong><br>If your school is participating in
-                                        Walk to School, your child’s<br>teacher will use a classroom calendar to record:<br>• your child’s name<br>• how many times they usually walk, ride or scoot to<br>and from school<br>• how many times they walk, ride
-                                        or scoot to and from<br>school in October.<br></p><img src="assets/img/Captureprize.PNG" style="width: 100%;"><button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal3">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <div class="modal-body" style="background-color: #ffffff;">
-                                    <h2 class="text-uppercase" style="font-size: 38px;color: rgb(254,209,54);">school students using ptv</h2>
-                                    <p class="item-intro text-muted" style="color: rgb(254,209,54);">Almost 40 percent of car trips made to school by<br>parents with primary school children are simple home‐school‐home trips<br><br></p><img class="img-fluid d-block mx-auto" src="assets/img/kidsPTV.jpeg">
-                                    <p style="color: rgb(11,11,11);"><br><br>Primary and secondary school students aged 5 to 18 can travel on a&nbsp;<a href="https://www.ptv.vic.gov.au/tickets/myki/concessions-and-free-travel/children-and-students/children/"><span style="text-decoration: underline;">Child myki</span></a>.&nbsp;<br><br><strong>Victorian Student Pass</strong><br>The
-                                        Victorian Student Pass gives you unlimited travel on all public transport operating wholly within Victoria.&nbsp;The pass is a myki card.To get this pass, you must have a PTV Approved School Student ID card or a
-                                        PTV School Student ID card. You need to carry your Student Pass and ID when travelling.<br><strong>Regional Student Pass</strong><br>The Regional Student Pass gives you unlimited travel on buses and&nbsp;V/Line
-                                        train services within the zones you choose.&nbsp;Passes for Geelong, Ballarat and Bendigo are mykis.&nbsp;Passes for Colac, Portland and Southwest bus networks are paper tickets.To get this pass, you must have a
-                                        PTV Approved School Student ID card or a PTV School Student ID.&nbsp;You need to carry your Student Pass and ID when travelling.<br><br>Data indicate that while trips to school by public transport lead to<br>multiple
-                                        benefits associated with reduced car use, they may not make a substantial contribution to children’s physical activity levels.<br><strong>MAKE YOUR CHOICE WISELY!</strong><br><br></p><button class="btn btn-primary"
-                                        data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal4">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <div class="modal-body">
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p><img class="img-fluid d-block mx-auto" src="assets/img/portfolio/4-full.jpg">
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae
-                                        cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-unstyled">
-                                        <li>Date: January 2017</li>
-                                        <li>Client: Threads</li>
-                                        <li>Category: Illustration</li>
-                                    </ul><button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal5">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <div class="modal-body">
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p><img class="img-fluid d-block mx-auto" src="assets/img/portfolio/5-full.jpg">
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae
-                                        cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-unstyled">
-                                        <li>Date: January 2017</li>
-                                        <li>Client: Threads</li>
-                                        <li>Category: Illustration</li>
-                                    </ul><button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade portfolio-modal text-center" role="dialog" tabindex="-1" id="portfolioModal6">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <div class="modal-body">
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p><img class="img-fluid d-block mx-auto" src="assets/img/portfolio/6-full.jpg">
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae
-                                        cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-unstyled">
-                                        <li>Date: January 2017</li>
-                                        <li>Client: Threads</li>
-                                        <li>Category: Illustration</li>
-                                    </ul><button class="btn btn-primary" data-dismiss="modal" type="button"><i class="fa fa-times"></i><span>&nbsp;Close Project</span></button></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="assets/js/agency.js"></script>
+    <script type='text/javascript'>   
+      var divElement = document.getElementById('viz1590025157075');                   
+	   var vizElement = divElement.getElementsByTagName('object')[0];                    
+	   if ( divElement.offsetWidth > 800 ) { 
+		   vizElement.style.minWidth='420px';
+		   vizElement.style.maxWidth='650px';
+		   vizElement.style.width='100%';
+		   vizElement.style.minHeight='587px';
+		   vizElement.style.maxHeight='887px';
+		   vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+		   } else if ( divElement.offsetWidth > 500 ) 
+		   { vizElement.style.minWidth='420px';
+		   vizElement.style.maxWidth='650px';
+		   vizElement.style.width='100%';
+		   vizElement.style.minHeight='587px';
+		   vizElement.style.maxHeight='887px';
+		   vizElement.style.height=(divElement.offsetWidth*0.75)+'px';
+		   } else 
+		   { vizElement.style.width='100%';vizElement.style.height='877px';
+		   }                     
+		   var scriptElement = document.createElement('script');                    
+		   scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    
+		   vizElement.parentNode.insertBefore(scriptElement, vizElement);                
+      </script>
 </body>
 
 </html>
