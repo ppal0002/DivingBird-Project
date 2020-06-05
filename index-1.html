@@ -36,7 +36,10 @@
                 var temp0 = weatherData.list[2].main.temp_max;
                 var tem0 = temp0;
                 $('#icon0').append("<img src=https://openweathermap.org/img/wn/"+ weatherData.list[2].weather[0].icon +"@2x.png>");
-                $('#date0').append(date0.substring(0,10));
+                $('#date0').append(date0.substring(8,10));
+		$('#date0').append(date0.substring(4,7));
+		$('#date0').append(date0.substring(7,8));
+		$('#date0').append(date0.substring(0,4));
                 $('#week0').append(getDayOfWeek(date0.substring(0,10)));
                 $('#temp0').append(description0 + "   " + tem0.toFixed(0)+"&deg;C");
          }
@@ -49,7 +52,10 @@
 		        var temp0 = weatherData.list[8].main.temp_max;
 		        var tem0 = temp0;
 		        $('#icon1').append("<img src=https://openweathermap.org/img/wn/"+ weatherData.list[10].weather[0].icon +"@2x.png>");
-		        $('#date1').append(date0.substring(0,10));
+			$('#date1').append(date0.substring(8,10));
+		        $('#date1').append(date0.substring(4,7));
+		        $('#date1').append(date0.substring(7,8));
+		        $('#date1').append(date0.substring(0,4));
 		        $('#week1').append(getDayOfWeek(date0.substring(0,10)));
 		        $('#temp1').append(description0 + "   " + tem0.toFixed(0)+"&deg;C");
 		 }
@@ -62,7 +68,10 @@
 		        var temp0 = weatherData.list[18].main.temp_max;
 		        var tem0 = temp0;
 		        $('#icon2').append("<img src=https://openweathermap.org/img/wn/"+ weatherData.list[18].weather[0].icon +"@2x.png>");
-		        $('#date2').append(date0.substring(0,10));
+			$('#date2').append(date0.substring(8,10));
+		        $('#date2').append(date0.substring(4,7));
+		        $('#date2').append(date0.substring(7,8));
+		        $('#date2').append(date0.substring(0,4));
 		        $('#week2').append(getDayOfWeek(date0.substring(0,10)));
 		        $('#temp2').append(description0 + "   " + tem0.toFixed(0)+"&deg;C");
 		 }
